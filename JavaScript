@@ -1,0 +1,25 @@
+let playerScore = 0;
+let computerScore = 0;
+
+function playGame(playerChoice) {
+  const choices = ['rock', 'paper', 'scissors'];
+  const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+
+  if (playerChoice === computerChoice) {
+    console.log(`It's a tie!`);
+  } else if (
+    (playerChoice === 'rock' && computerChoice === 'scissors') ||
+    (playerChoice === 'scissors' && computerChoice === 'paper') ||
+    (playerChoice === 'paper' && computerChoice === 'rock')
+  ) {
+    playerScore++;
+    console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+  } else {
+    computerScore++;
+    console.log(`Computer wins! ${computerChoice} beats ${playerChoice}`);
+  }
+
+  console.log(`Score - You: ${playerScore}, Computer: ${computerScore}`);
+}
+
+playGame('rock'); // Test the function
